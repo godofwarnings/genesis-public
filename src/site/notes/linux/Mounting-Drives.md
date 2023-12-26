@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/linux/mounting-drives/"}
 ---
 
-
-# Mounting Drives
 This is the procedure I followed to mount my **WDC 1 TB** hard disk
 Checkout [[linux/Manjaro/Can’t mount secondary HDD\|Can’t mount secondary HDD]] for similar issue
 
