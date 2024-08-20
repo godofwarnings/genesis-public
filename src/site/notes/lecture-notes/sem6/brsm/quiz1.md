@@ -162,3 +162,13 @@ Solution to experimenter bias
 #### Comparison with Frequentist View:
 - Frequentist view is considered narrow, forbidding assigning probabilities to certain scenarios.
 - Bayesian view is sometimes seen as broad, allowing differences between observers in their beliefs about the same event.
+
+### Some probability distributions
+- [probably the best description](https://www.youtube.com/watch?v=Uv6nGIgZMVw&ab_channel=jbstatistics)
+- https://analystprep.com/cfa-level-1-exam/quantitative-methods/t-distribution-and-degrees-of-freedom/
+- https://pressbooks.bccampus.ca/simplestats/chapter/6-8-the-t-distribution/
+
+### Biased and unbiased estimator
+An estimator is unbiased _if it's expectation is equal to the parameter that we're trying to estimate_.
+- [a pdf](https://www.statslab.cam.ac.uk/Dept/People/djsteaching/S1B-15-02-estimation-bias-4.pdf)
+- https://www.probabilitycourse.com/chapter8/8_2_1_evaluating_estimators.php
