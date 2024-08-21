@@ -69,7 +69,7 @@ int main(){
 ```
 
 ### Example 2
-### Case 1: Passing `const int x` to a Function Expecting `int`
+#### Case 1: Passing `const int x` to a Function Expecting `int`
 
 ```cpp
 void foo(int x) {
@@ -83,7 +83,7 @@ int main() {
 }
 ```
 
-### Case 2: Passing `const int& x` to a Function Expecting `int&`
+#### Case 2: Passing `const int& x` to a Function Expecting `int&`
 
 ```cpp
 void foo(int& x) {
@@ -97,11 +97,11 @@ int main() {
 }
 ```
 
-### Why Does Case 1 Work?
+#### Why Does Case 1 Work?
 
 In the first case, the function `foo(int x)` expects an `int`, which means it's expecting a copy of the value. When you pass `y` (which is a `const int`) to `foo`, the compiler creates a copy of `y`, which is an `int`, and passes that copy to the function. The `const` qualifier is only relevant for the original variable `y`, and does not apply to the copied value being passed to the function.
 
-### Why Does Case 2 Fail?
+#### Why Does Case 2 Fail?
 
 In the second case, the function `foo(int& x)` expects a non-const lvalue reference. An lvalue reference requires that the argument passed to it be modifiable because the reference allows the function to potentially modify the original variable.
 
@@ -110,7 +110,7 @@ In the second case, the function `foo(int& x)` expects a non-const lvalue refere
 
 When you try to pass `y` (a `const int`) to a function that expects a non-const `int&`, the compiler will throw an error because it can't guarantee that the function won't attempt to modify `y`, which would violate the `const` qualifier.
 
-### Key Differences
+#### Key Differences
 
 - **Copying (`int x`) vs. Referencing (`int& x`)**: 
   - In the first case (`int x`), the value is copied, so the function operates on a separate, non-const copy of the variable, which is allowed.
@@ -120,7 +120,7 @@ When you try to pass `y` (a `const int`) to a function that expects a non-const 
   - **Passing by Value (`int x`)**: The constness of the original variable is irrelevant after copying. The function just works with the copied value.
   - **Passing by Reference (`int& x`)**: The constness of the original variable matters because the function could modify it through the reference.
 
-### Correcting the Error
+#### Correcting the Error
 
 If you want to pass a `const int` to a function expecting a reference, you can change the function to accept a `const int&`:
 
@@ -138,11 +138,11 @@ int main() {
 
 In this case, `foo` is allowed to accept `const int` arguments because it guarantees not to modify them.
 
-### Summary
+#### Summary
 
 - **Case 1** works because the `const int` is copied into a non-const `int`, which is perfectly fine.
 - **Case 2** fails because the function expects a non-const reference, but you're trying to pass a `const` variable, which can't be modified.
 
-
+### Example 3
 
 ## References
