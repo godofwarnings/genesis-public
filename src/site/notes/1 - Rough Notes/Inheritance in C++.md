@@ -129,6 +129,10 @@ int main() {
 }
 ```
 
+```cpp
+Base* ptr = &d;  // This would NOT compile
+```
+The line is trying to treat a `Derived` object (`d`) as if it were a `Base` object (using a pointer). However, because the inheritance is **protected**, you cannot perform this type of conversion outside of the `Derived` class. Protected inheritance restricts access to `Base` through `Derived` outside the class, meaning external code (like in `main`) **does not have access to the fact** that `Derived` is related to `Base`.
 
 ### `private` inheritance
 When you use private inheritance, all public and protected members of the base class become private members of the derived class. This means:
@@ -136,6 +140,9 @@ When you use private inheritance, all public and protected members of the base c
 1. Outside the derived class, you cannot access base class members or use base class pointers/references to refer to derived class objects.
 2. Inside the derived class, you can access public and protected members of the base class.
 3. Further derived classes cannot access the base class members through this derived class.
+
+This effectively hides the fact that `Derived` is related to `Base` from the outside world.
+
 ```cpp
 class Base {
 public:
